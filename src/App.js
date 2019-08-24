@@ -30,8 +30,18 @@ class App extends React.Component {
               />
             } 
           />
-          <Route path='/folder' component={FolderSidebar} />
-          <Route path='/note' component={NoteSidebar} />
+          <Route 
+            path='/folder'
+            render={() => 
+              <FolderSidebar />
+            }  
+          />
+          <Route 
+            path='/note'
+            render={() =>
+              <NoteSidebar />
+            }
+          />
         </Sidebar>
         <Main>
           <Route exact path='/' component={MainPage} />
