@@ -26,7 +26,7 @@ class App extends React.Component {
             exact path='/' 
             render={() => 
               <MainSidebar 
-                folders={this.state.folders.map(folder => {return folder.name})} 
+                folders={this.state.folders} 
               />
             } 
           />
@@ -44,9 +44,9 @@ class App extends React.Component {
           />
         </Sidebar>
         <Main>
-          <Route exact path='/' component={MainPage} />
-          <Route path='/folder' component={MainPage} />
-          <Route path='/note' component={NotePage} />
+          <Route exact path='/' render={() => <MainPage />} />
+          <Route path='/folder' render={() => <MainPage />} />
+          <Route path='/note' render={() => <NotePage />} />
         </Main>
       </div>
     );
