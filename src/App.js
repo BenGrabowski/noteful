@@ -2,9 +2,9 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import Header from './Header/Header';
 import Sidebar from './Sidebar/Sidebar';
-import MainSidebar from './Sidebar/MainSidebar';
-import FolderSidebar from './Sidebar/FolderSidebar';
-import NoteSidebar from './Sidebar/NoteSidebar';
+// import MainSidebar from './Sidebar/MainSidebar';
+// import FolderSidebar from './Sidebar/FolderSidebar';
+// import NoteSidebar from './Sidebar/NoteSidebar';
 import Main from './Main/Main';
 import MainPage from './Main/MainPage';
 import NotePage from './Main/Notepage';
@@ -21,8 +21,8 @@ class App extends React.Component {
     return (
       <div className='App'>
         <Header />
-        <Sidebar>
-          <Route 
+        <Sidebar folders={this.state.folders}>
+          {/* <Route 
             exact path='/' 
             render={() => 
               <MainSidebar 
@@ -41,7 +41,7 @@ class App extends React.Component {
             render={() =>
               <NoteSidebar />
             }
-          />
+          /> */}
         </Sidebar>
         <Main>
           <Route exact path='/' render={() => <MainPage />} />
