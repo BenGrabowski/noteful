@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 import MainSidebar from './MainSidebar';
 import FolderSidebar from './FolderSidebar';
 import NoteSidebar from './NoteSidebar';
+import './Sidebar.css';
 
 class Sidebar extends Component {
     render() {
@@ -12,14 +13,18 @@ class Sidebar extends Component {
                     exact path='/' 
                     render={() => 
                         <MainSidebar 
-                            folders={this.props.folders} 
+                            folders={this.props.folders}
+                            updateSelectedFolder={this.props.updateSelectedFolder} 
                         />
                     } 
                 />
                 <Route 
                     path='/folder'
                     render={() => 
-                        <FolderSidebar />
+                        <FolderSidebar
+                            folders={this.props.folders}
+                            updateSelectedFolder={this.props.updateSelectedFolder} 
+                        />
                     }  
                 />
                 <Route 

@@ -1,5 +1,10 @@
 .Header {
     font-size: 40px;
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+    padding: 20px;
+    height: 150px;
 }
 
 .Header > a {

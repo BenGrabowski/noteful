@@ -1,0 +1,15 @@
+.sidebar {
+    height: 100%;
+}
+
+.folder {
+    list-style: none;
+    /* border: 1px solid black; */
+    outline: 1px solid black;
+    padding: 15px;
+    min-width: 150px;
+}
+
+.folder-link {
+    text-decoration: none;
+}
