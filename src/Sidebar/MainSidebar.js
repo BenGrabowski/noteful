@@ -3,9 +3,14 @@ import React, { Component } from 'react';
 class MainSidebar extends Component {
     render() {
         console.log(this.props.folders);
-        // const folders = 
+        const folders = this.props.folders.map((folder, index) => {
+            return <li key={index}>{folder.name}</li>
+        });
         return (
             <div className="sidebar">
+                <ul>
+                    {folders}
+                </ul>
             </div>
         );
     }
