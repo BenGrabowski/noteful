@@ -33,6 +33,7 @@ class Main extends Component {
                     render={() => 
                         <NotePage
                             notes={this.props.notes}
+                            selectedNote={this.props.selectedNote}
                         />
                     } 
                 />
