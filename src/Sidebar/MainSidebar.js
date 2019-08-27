@@ -10,8 +10,9 @@ class MainSidebar extends Component {
                 <li key={index} className="folder">
                     <Link 
                         to={`/folder/${folder.id}`}
-                        onClick={e => this.props.updateSelectedFolder(e.target.text)}
+                        onClick={e => this.props.updateSelectedFolder(e.target.id)}
                         className="folder-link"
+                        id={folder.id}
                     >
                         {folder.name}
                     </Link>

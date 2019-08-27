@@ -10,6 +10,8 @@ class FolderSidebar extends Component {
                     <Link 
                         to={`/folder/${folder.id}`}
                         className="folder-link"
+                        onClick={e => this.props.updateSelectedFolder(e.target.id)}
+                        id={folder.id}
                     >
                         {folder.name}
                     </Link>

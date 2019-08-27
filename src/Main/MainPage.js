@@ -4,7 +4,12 @@ import moment from 'moment';
 
 class MainPage extends Component {
     render() {
-        const notes = this.props.notes.map((note, index) => {
+        
+        let selectedFolder = this.props.selectedFolder
+        let  notes = undefined;
+
+        selectedFolder !== ''
+        ? notes = this.props.notes.filter(note => note.folderId === selectedFolder).map((note, index) => {
             return (
                 <li key={index}>
                     <Link 
@@ -15,8 +20,22 @@ class MainPage extends Component {
                     </Link>
                     <p>{`Date modified on ${moment(note.modified).format('Do MMM YYYY')}`}</p>
                 </li>
-            );
+            ); 
+        })
+        : notes = this.props.notes.map((note, index) => {
+            return (
+                <li key={index}>
+                    <Link 
+                        to={`/note/${note.id}`}
+                        className="note-link"
+                    >
+                        <h2>{note.name}</h2>
+                    </Link>
+                    <p>{`Date modified on ${moment(note.modified).format('Do MMM YYYY')}`}</p>
+                </li>
+            ); 
         });
+        
         console.log(this.props);
         return (
             <div>

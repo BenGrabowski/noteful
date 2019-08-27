@@ -15,6 +15,7 @@ class App extends React.Component {
   }
   
   setSelectedFolder = (id) => {
+    console.log(id);
     this.setState({
       selectedFolder: id
     });
@@ -23,7 +24,9 @@ class App extends React.Component {
   render() {
     return (
       <div className='App'>
-        <Header />
+        <Header
+          updateSelectedFolder={this.setSelectedFolder}
+        />
         <main>
           <Sidebar 
             folders={this.state.folders}
@@ -31,6 +34,7 @@ class App extends React.Component {
           />
           <Main
             notes={this.state.notes}
+            selectedFolder={this.state.selectedFolder}
           />
         </main>
       </div>

@@ -13,6 +13,7 @@ class Main extends Component {
                     render={() => 
                         <MainPage 
                             notes={this.props.notes} 
+                            selectedFolder={this.props.selectedFolder}
                         />
                     }
                 />
@@ -21,6 +22,7 @@ class Main extends Component {
                     render={() => 
                         <MainPage
                             notes={this.props.notes}
+                            selectedFolder={this.props.selectedFolder}
                         />
                     } 
                 />
