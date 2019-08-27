@@ -8,7 +8,11 @@ class Header extends Component {
             <div className="Header">
                 <Link 
                     to='/'
-                    onClick={e => this.props.updateSelectedFolder('')}
+                    onClick={e => {
+                        this.props.updateSelectedFolder('');
+                        this.props.updateSelectedNote('');
+                        }
+                    }
                 >
                     Noteful
                 </Link>

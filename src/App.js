@@ -34,17 +34,21 @@ class App extends React.Component {
       <div className='App'>
         <Header
           updateSelectedFolder={this.setSelectedFolder}
+          updateSelectedNote={this.setSelectedNote}
         />
         <main>
           <Sidebar 
             folders={this.state.folders}
-            updateSelectedFolder={this.setSelectedFolder}  
+            updateSelectedFolder={this.setSelectedFolder}
+            selectedFolder={this.state.selectedFolder}
+            notes={this.state.notes}
+            selectedNote={this.state.selectedNote}
           />
           <Main
             notes={this.state.notes}
             selectedFolder={this.state.selectedFolder}
             selectedNote={this.state.selectedNote}
-            updatedSelectedNote={this.setSelectedNote}
+            updateSelectedNote={this.setSelectedNote}
           />
         </main>
       </div>

@@ -5,3 +5,9 @@
 .note-link {
     text-decoration: none;
 }
+
+.note-box {
+    border: 1px solid black;
+    padding: 5px;
+    margin-top: 5px;
+}
