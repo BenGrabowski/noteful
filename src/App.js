@@ -11,13 +11,21 @@ class App extends React.Component {
   state = {
     folders: STORE["folders"],
     notes: STORE["notes"],
-    selectedFolder: ''
+    selectedFolder: '',
+    selectedNote: ''
   }
   
   setSelectedFolder = (id) => {
     console.log(id);
     this.setState({
       selectedFolder: id
+    });
+  }
+
+  setSelectedNote = (id) => {
+    console.log(id);
+    this.setState({
+      selectedNote: id
     });
   }
   
@@ -35,6 +43,8 @@ class App extends React.Component {
           <Main
             notes={this.state.notes}
             selectedFolder={this.state.selectedFolder}
+            selectedNote={this.state.selectedNote}
+            updatedSelectedNote={this.setSelectedNote}
           />
         </main>
       </div>

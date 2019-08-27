@@ -15,6 +15,7 @@ class MainPage extends Component {
                     <Link 
                         to={`/note/${note.id}`}
                         className="note-link"
+                        onClick={e => this.props.updateSelectedNote(note.id)}
                     >
                         <h2>{note.name}</h2>
                     </Link>
@@ -28,6 +29,7 @@ class MainPage extends Component {
                     <Link 
                         to={`/note/${note.id}`}
                         className="note-link"
+                        onClick={e => this.props.updateSelectedNote(note.id)}
                     >
                         <h2>{note.name}</h2>
                     </Link>
@@ -36,7 +38,7 @@ class MainPage extends Component {
             ); 
         });
         
-        console.log(this.props);
+        // console.log(this.props);
         return (
             <div>
                 <ul className="notes">

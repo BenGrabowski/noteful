@@ -14,6 +14,7 @@ class Main extends Component {
                         <MainPage 
                             notes={this.props.notes} 
                             selectedFolder={this.props.selectedFolder}
+                            updateSelectedNote={this.props.updateSelectedNote}
                         />
                     }
                 />
@@ -23,6 +24,7 @@ class Main extends Component {
                         <MainPage
                             notes={this.props.notes}
                             selectedFolder={this.props.selectedFolder}
+                            updateSelectedNote={this.props.updateSelectedNote}
                         />
                     } 
                 />
