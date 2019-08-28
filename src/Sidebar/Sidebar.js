@@ -23,7 +23,8 @@ class Sidebar extends Component {
                     render={() => 
                         <FolderSidebar
                             folders={this.props.folders}
-                            updateSelectedFolder={this.props.updateSelectedFolder} 
+                            updateSelectedFolder={this.props.updateSelectedFolder}
+                            selectedFolder={this.props.selectedFolder} 
                         />
                     }  
                 />

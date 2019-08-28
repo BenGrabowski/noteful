@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import './Sidebar.css';
 
 class FolderSidebar extends Component {
     render() {
-        console.log(this.props.folders);
         const folders = this.props.folders.map((folder, index) => {
+            const folderClass = folder.id === this.props.selectedFolder ? "selected" : "folder";
+            
             return(
-                <li key={index} className="folder">
+                <li key={index} className={folderClass}>
                     <Link 
                         to={`/folder/${folder.id}`}
                         className="folder-link"
