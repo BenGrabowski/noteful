@@ -11,7 +11,9 @@ class MainPage extends Component {
         selectedFolder !== ''
         ? notes = this.props.notes.filter(note => note.folderId === selectedFolder).map((note, index) => {
             return (
-                <li key={index}>
+                <li 
+                    key={index}
+                    className="note-item">
                     <Link 
                         to={`/note/${note.id}`}
                         className="note-link"
@@ -40,7 +42,7 @@ class MainPage extends Component {
         
         // console.log(this.props);
         return (
-            <div>
+            <div className="notes-wrapper">
                 <ul className="notes">
                     {notes}
                 </ul>

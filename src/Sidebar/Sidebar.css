@@ -1,5 +1,15 @@
 .sidebar {
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0px;
 }
 
 .folder {
@@ -12,4 +22,15 @@
 
 .folder-link {
     text-decoration: none;
+}
+
+.add-folder {
+    width: 95%;
+    height: 50px;
+    margin-top: 5px;
+}
+
+.go-back {
+    width: 150px;
+    height: 50px;
 }

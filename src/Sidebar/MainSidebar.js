@@ -21,9 +21,9 @@ class MainSidebar extends Component {
         });
         return (
             <div className="sidebar">
-                <ul>
+                <ul className="sidebar-list">
                     {folders}
-                    <button>Add folder</button>
+                    <button className="add-folder">Add folder</button>
                 </ul>
             </div>
         );

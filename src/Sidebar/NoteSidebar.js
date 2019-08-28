@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 
 class NoteSidebar extends Component {
     render() {
-        
-        
         const currentNote = this.props.notes.filter(note => note.id === this.props.selectedNote);
         console.log(currentNote);
 
@@ -11,7 +9,12 @@ class NoteSidebar extends Component {
         console.log(currentFolder);
         return (
             <div className="sidebar">
-               <button>Go back</button>
+               <button 
+                    onClick={this.props.goBack}
+                    className="go-back"
+                >
+                    Go back
+                </button>
                <p>{currentFolder[0].name}</p>
             </div>
         );

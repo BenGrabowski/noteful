@@ -1,5 +1,6 @@
 .notes {
     list-style: none;
+    width: 95%;
 }
 
 .note-link {
@@ -10,4 +11,20 @@
     border: 1px solid black;
     padding: 5px;
     margin-top: 5px;
+}
+
+.Main {
+    border-left: 1px solid black;
+    width: 100%;
+}
+
+.notes > li {
+    border: 1px solid black;
+    margin-top: 5px;
+    padding: 0px 10px;
+}
+
+.notes-wrapper {
+    display: flex;
+    width: 100%;
 }

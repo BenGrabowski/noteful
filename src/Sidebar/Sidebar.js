@@ -29,12 +29,13 @@ class Sidebar extends Component {
                 />
                 <Route 
                     path='/note'
-                    render={() =>
+                    render={({ history }) =>
                         <NoteSidebar 
                             folders={this.props.folders}
                             selectedFolder={this.props.selectedFolder}
                             notes={this.props.notes}
                             selectedNote={this.props.selectedNote}
+                            goBack={() => history.goBack()}
                         />
                     }
                 />
