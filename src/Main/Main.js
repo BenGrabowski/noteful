@@ -10,32 +10,15 @@ class Main extends Component {
             <div className="Main">
                 <Route 
                     exact path='/' 
-                    render={() => 
-                        <MainPage 
-                            notes={this.props.notes} 
-                            selectedFolder={this.props.selectedFolder}
-                            updateSelectedNote={this.props.updateSelectedNote}
-                        />
-                    }
+                    component={MainPage}
                 />
                 <Route 
                     path='/folder' 
-                    render={() => 
-                        <MainPage
-                            notes={this.props.notes}
-                            selectedFolder={this.props.selectedFolder}
-                            updateSelectedNote={this.props.updateSelectedNote}
-                        />
-                    } 
+                    component={MainPage} 
                 />
                 <Route 
                     path='/note' 
-                    render={() => 
-                        <NotePage
-                            notes={this.props.notes}
-                            selectedNote={this.props.selectedNote}
-                        />
-                    } 
+                    component={NotePage} 
                 />
             </div>
         );

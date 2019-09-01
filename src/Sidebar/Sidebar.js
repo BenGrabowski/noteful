@@ -4,45 +4,27 @@ import MainSidebar from './MainSidebar';
 import FolderSidebar from './FolderSidebar';
 import NoteSidebar from './NoteSidebar';
 import './Sidebar.css';
+// import Main from '../Main/Main';
 
-class Sidebar extends Component {
+export default class Sidebar extends Component {
     render() {
         return (
             <div>
                 <Route 
                     exact path='/' 
-                    render={() => 
-                        <MainSidebar 
-                            folders={this.props.folders}
-                            updateSelectedFolder={this.props.updateSelectedFolder} 
-                        />
-                    } 
+                    component={MainSidebar} 
                 />
                 <Route 
                     path='/folder'
-                    render={() => 
-                        <FolderSidebar
-                            folders={this.props.folders}
-                            updateSelectedFolder={this.props.updateSelectedFolder}
-                            selectedFolder={this.props.selectedFolder} 
-                        />
-                    }  
+                    component={FolderSidebar}  
                 />
                 <Route 
                     path='/note'
-                    render={({ history }) =>
-                        <NoteSidebar 
-                            folders={this.props.folders}
-                            selectedFolder={this.props.selectedFolder}
-                            notes={this.props.notes}
-                            selectedNote={this.props.selectedNote}
-                            goBack={() => history.goBack()}
-                        />
-                    }
+                    component={NoteSidebar}
                 />
             </div>
         );
     }
 }
 
-export default Sidebar;
+// export default Sidebar;
