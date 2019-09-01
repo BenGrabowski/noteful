@@ -30,6 +30,28 @@ class App extends React.Component {
     });
   }
 
+  deleteNote = (id) => {
+    console.log(id)
+    fetch(`http://localhost:9090/notes/${id}`, {
+        method: 'DELETE',
+        headers: {
+            'content-type': 'application/json'
+        },
+    })
+    .then(response => {
+        if(!response.ok) {
+            return response.json().then(error => {
+                throw error
+            })
+        }
+        return response.json()
+    })
+    .then(response => console.log(response))
+    .catch(error => {
+        console.log(error)
+    });
+}
+
   componentDidMount() {
     fetch('http://localhost:9090/folders', {
       method: 'GET',
@@ -77,6 +99,7 @@ class App extends React.Component {
       selectedNote: this.state.selectedNote,
       updateSelectedFolder: this.setSelectedFolder,
       updateSelectedNote: this.setSelectedNote,
+      deleteNote: this.deleteNote,
     }
     
     return (

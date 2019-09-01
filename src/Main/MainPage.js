@@ -25,7 +25,7 @@ class MainPage extends Component {
                                      <h2>{note.name}</h2>
                                  </Link>
                                  <p>{`Date modified on ${moment(note.modified).format('Do MMM YYYY')}`}</p>
-                                 <button>Delete</button>
+                                 <button onClick={context.deleteNote(note.id)}>Delete</button>
                              </li>
                          ); 
                      })
@@ -40,7 +40,7 @@ class MainPage extends Component {
                                      <h2>{note.name}</h2>
                                  </Link>
                                  <p>{`Date modified on ${moment(note.modified).format('Do MMM YYYY')}`}</p>
-                                 <button>Delete</button>
+                                 <button onClick={context.deleteNote(note.id)}>Delete</button>
                              </li>
                          ); 
                      });

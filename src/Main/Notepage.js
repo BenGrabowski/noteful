@@ -3,27 +3,10 @@ import NoteContext from '../NoteContext';
 import moment from 'moment';
 
 class NotePage extends Component {
-    deleteNote = (id) => {
-        fetch(`http://localhost:9090/notes/${id}`, {
-            method: 'DELETE',
-            headers: {
-                'content-type': 'application/json'
-            },
-        })
-        .then(response => {
-            if(!response.ok) {
-                throw new Error(response.status)
-            }
-            return response.json()
-        })
-        .then(response => console.log(response))
-        .catch();
-    }
-    
     render() {
         return (
             <NoteContext.Consumer>
-                {(context) => {
+                {(context) => {                    
                     const note = context.notes.filter(note => note.id === context.selectedNote)
                     .map((note, index) => {
                         return (
@@ -31,6 +14,11 @@ class NotePage extends Component {
                                 <div className="note-box" >
                                     <h2>{note.name}</h2>
                                     <p>{`Date modified on ${moment(note.modified).format('Do MMM YYYY')}`}</p>
+                                    <button 
+                                        onClick={() => context.deleteNote(note.id)}
+                                    >
+                                        Delete Note
+                                    </button>
                                 </div>
                                 <p>{note.content}</p>
                             </div>
