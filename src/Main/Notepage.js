@@ -15,7 +15,10 @@ class NotePage extends Component {
                                 <div className="note-box" >
                                     <h2>{note.name}</h2>
                                     <p>{`Date modified on ${moment(note.modified).format('Do MMM YYYY')}`}</p>
-                                    <DeleteButton />
+                                    <DeleteButton 
+                                        onClick={() => this.props.history.push('/')}
+                                        id={note.id}
+                                    />
                                 </div>
                                 <p>{note.content}</p>
                             </div>

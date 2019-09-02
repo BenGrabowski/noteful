@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import NoteContext from '../NoteContext';
-import { isContext } from 'vm';
 
 class DeleteButton extends Component { 
-    render() {
-        return (
-            <NoteContext.Consumer>
-                {(context) => {
-                     deleteNote = (id) => {
+    static contextType = NoteContext;
+    
+    deleteNote = (id) => {
                         console.log('deleteNote ran')
                         fetch(`http://localhost:9090/notes/${id}`, {
                             method: 'DELETE',
@@ -25,16 +22,22 @@ class DeleteButton extends Component {
                         })
                         .then(response => {
                             console.log(response)
-                            context.handleDeleteNote(id)
+                            this.context.handleDeleteNote(id)
                         })
                         .catch(error => {
                             console.log(error)
                         });
-                    }  
-                    
-                    <button onClick={() => this.deleteNote(this.props.id)}>
-                        Delete Note
-                    </button>
+                    }
+    
+    render() {
+        return (
+            <NoteContext.Consumer>
+                {(context) => {
+                     return (
+                        <button onClick={() => this.deleteNote(this.props.id)}>
+                            Delete Note
+                        </button>
+                     );
                 }}
             </NoteContext.Consumer>
         );
