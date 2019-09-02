@@ -28,11 +28,11 @@ class App extends React.Component {
     });
   }
 
-  // handleDeleteNote = (id) => {
-  //   this.setState({
-  //     notes: this.state.notes.filter(note => note.id !== id)
-  //   });
-  // }
+  handleDeleteNote = (id) => {
+    this.setState({
+      notes: this.state.notes.filter(note => note.id !== id)
+    });
+  }
 
   componentDidMount() {
     fetch('http://localhost:9090/folders', {
@@ -82,7 +82,7 @@ class App extends React.Component {
       selectedNote: this.state.selectedNote,
       updateSelectedFolder: this.setSelectedFolder,
       updateSelectedNote: this.setSelectedNote,
-      deleteNote: this.handleDeleteNote,
+      handleDeleteNote: this.handleDeleteNote,
     }
     
     return (
