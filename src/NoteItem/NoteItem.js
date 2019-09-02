@@ -15,8 +15,8 @@ class NoteItem extends Component {
                         key={this.props.index}
                         className="note-item">
                      <Link 
-                        //  to={`/note/${this.props.id}`}
-                        to={'/note/:noteId'}
+                         to={`/note/${this.props.id}`}
+                        // to={'/note/:noteId'}
                          className="note-link"
                          onClick={e => context.updateSelectedNote(this.props.id)}
                      >
