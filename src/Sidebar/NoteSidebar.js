@@ -12,7 +12,7 @@ class NoteSidebar extends Component {
                 {(context) => {
                    const currentNote = context.notes.filter(note => note.id === context.selectedNote);
                    const currentFolder = context.folders.filter(folder => {
-                    console.log(folder.id, currentNote[0].folderId)   
+                    console.log(currentNote[0].folderId)   
                     return folder.id === currentNote[0].folderId});
                    console.log(currentNote)
                    console.log(currentFolder)

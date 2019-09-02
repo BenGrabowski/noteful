@@ -12,10 +12,11 @@ class NoteItem extends Component {
                 {(context) => {
                      return (
                      <li 
-                     key={this.props.index}
-                     className="note-item">
+                        key={this.props.index}
+                        className="note-item">
                      <Link 
-                         to={`/note/${this.props.id}`}
+                        //  to={`/note/${this.props.id}`}
+                        to={'/note/:noteId'}
                          className="note-link"
                          onClick={e => context.updateSelectedNote(this.props.id)}
                      >
