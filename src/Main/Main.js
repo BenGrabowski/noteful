@@ -17,7 +17,7 @@ class Main extends Component {
                     component={MainPage} 
                 />
                 <Route 
-                    path='/note' 
+                    path='/note/:noteId' 
                     component={NotePage} 
                 />
             </div>
