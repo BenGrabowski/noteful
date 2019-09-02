@@ -14,13 +14,10 @@ class NoteSidebar extends Component {
                    const currentNote = context.notes.find(note => note.id === this.props.match.params.noteId);
                    console.log(currentNote)
                    const currentFolder = context.folders.find(folder => {
-                    // console.log(currentNote[0].folderId)
                     console.log(this.props.match.params)
                     console.log(context.notes)
-                    // console.log(folder.id, currentNote[0].folderId)   
+                    // console.log(currentFolder) 
                     return folder.id === currentNote.folderId});
-                //    console.log(currentNote[0].folderId)
-                //    console.log(currentFolder)
                    return (
                     <div className="sidebar">
                     <button 

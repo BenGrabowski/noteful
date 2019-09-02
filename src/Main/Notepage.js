@@ -10,7 +10,7 @@ class NotePage extends Component {
                 {(context) => {                    
                     console.log(this.props.match.params)
                     // const note = context.notes.filter(note => note.id === context.selectedNote)
-                    const note = context.notes.find(note => note.id === this.props.match.params.noteId)
+                    const note = context.notes.filter(note => note.id === this.props.match.params.noteId)
                     .map((note, index) => {
                         return (
                             <div key={index}>
