@@ -19,7 +19,7 @@ export default class Sidebar extends Component {
                     component={FolderSidebar}  
                 />
                 <Route 
-                    path='/note'
+                    path='/note/:noteId'
                     component={NoteSidebar}
                 />
             </div>
