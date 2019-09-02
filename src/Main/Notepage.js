@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import NoteContext from '../NoteContext';
+import DeleteButton from '../DeleteButton/DeleteButton';
 import moment from 'moment';
 
 class NotePage extends Component {
@@ -14,11 +15,7 @@ class NotePage extends Component {
                                 <div className="note-box" >
                                     <h2>{note.name}</h2>
                                     <p>{`Date modified on ${moment(note.modified).format('Do MMM YYYY')}`}</p>
-                                    <button 
-                                        onClick={() => context.deleteNote(note.id)}
-                                    >
-                                        Delete Note
-                                    </button>
+                                    <DeleteButton />
                                 </div>
                                 <p>{note.content}</p>
                             </div>

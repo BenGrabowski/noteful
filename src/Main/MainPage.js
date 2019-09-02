@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import NoteContext from '../NoteContext';
-import moment from 'moment';
+import NoteItem from '../NoteItem/NoteItem';
+// import moment from 'moment';
 
 class MainPage extends Component {
     render() {
@@ -14,34 +15,24 @@ class MainPage extends Component {
                      selectedFolder !== ''
                      ? notes = context.notes.filter(note => note.folderId === selectedFolder).map((note, index) => {
                          return (
-                             <li 
-                                 key={index}
-                                 className="note-item">
-                                 <Link 
-                                     to={`/note/${note.id}`}
-                                     className="note-link"
-                                     onClick={e => context.updateSelectedNote(note.id)}
-                                 >
-                                     <h2>{note.name}</h2>
-                                 </Link>
-                                 <p>{`Date modified on ${moment(note.modified).format('Do MMM YYYY')}`}</p>
-                                 <button onClick={context.deleteNote(note.id)}>Delete</button>
-                             </li>
+                            <NoteItem 
+                                key={index}
+                                index={index}
+                                id={note.id}
+                                name={note.name}
+                                modified={note.modified}
+                            />
                          ); 
                      })
                      : notes = context.notes.map((note, index) => {
                          return (
-                             <li key={index}>
-                                 <Link 
-                                     to={`/note/${note.id}`}
-                                     className="note-link"
-                                     onClick={e => context.updateSelectedNote(note.id)}
-                                 >
-                                     <h2>{note.name}</h2>
-                                 </Link>
-                                 <p>{`Date modified on ${moment(note.modified).format('Do MMM YYYY')}`}</p>
-                                 <button onClick={context.deleteNote(note.id)}>Delete</button>
-                             </li>
+                            <NoteItem 
+                                key={index}
+                                index={index}
+                                id={note.id}
+                                name={note.name}
+                                modified={note.modified} 
+                            />
                          ); 
                      });
                     return (
@@ -52,7 +43,6 @@ class MainPage extends Component {
                         </div>
                     )
                 }}
-
             </NoteContext.Consumer>
         );
     }
