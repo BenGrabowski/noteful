@@ -8,7 +8,9 @@ class NotePage extends Component {
         return (
             <NoteContext.Consumer>
                 {(context) => {                    
-                    const note = context.notes.filter(note => note.id === context.selectedNote)
+                    console.log(this.props.match.params)
+                    // const note = context.notes.filter(note => note.id === context.selectedNote)
+                    const note = context.notes.find(note => note.id === this.props.match.params.noteId)
                     .map((note, index) => {
                         return (
                             <div key={index}>
@@ -16,7 +18,7 @@ class NotePage extends Component {
                                     <h2>{note.name}</h2>
                                     <p>{`Date modified on ${moment(note.modified).format('Do MMM YYYY')}`}</p>
                                     <DeleteButton 
-                                        onClick={() => this.props.history.push('/')}
+                                        // onClick={() => this.props.history.push('/')}
                                         id={note.id}
                                     />
                                 </div>
