@@ -12,11 +12,14 @@ class NoteSidebar extends Component {
                 {(context) => {
                 //    const currentNote = context.notes.filter(note => note.id === context.selectedNote);
                    const currentNote = context.notes.find(note => note.id === this.props.match.params.noteId);
+                   console.log(currentNote)
                    const currentFolder = context.folders.find(folder => {
                     // console.log(currentNote[0].folderId)
-                    console.log(this.props.match.params)   
-                    return folder.id === currentNote[0].folderId});
-                //    console.log(currentNote)
+                    console.log(this.props.match.params)
+                    console.log(context.notes)
+                    // console.log(folder.id, currentNote[0].folderId)   
+                    return folder.id === currentNote.folderId});
+                //    console.log(currentNote[0].folderId)
                 //    console.log(currentFolder)
                    return (
                     <div className="sidebar">
@@ -26,7 +29,7 @@ class NoteSidebar extends Component {
                         >
                             Go back
                         </button>
-                    <p>{currentFolder[0].name}</p>
+                    <p>{currentFolder.name}</p>
                     </div>
                    ) 
                 }}
