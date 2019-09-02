@@ -1,9 +1,7 @@
 import React from 'react';
-// import { Route } from 'react-router-dom';
 import Header from './Header/Header';
 import Sidebar from './Sidebar/Sidebar';
 import Main from './Main/Main';
-// import STORE from './STORE';
 import NoteContext from './NoteContext';
 import './App.css';
 
@@ -30,11 +28,11 @@ class App extends React.Component {
     });
   }
 
-  handleDeleteNote = (id) => {
-    this.setState({
-      notes: this.state.notes.filter(note => note.id !== id)
-    });
-  }
+  // handleDeleteNote = (id) => {
+  //   this.setState({
+  //     notes: this.state.notes.filter(note => note.id !== id)
+  //   });
+  // }
 
   componentDidMount() {
     fetch('http://localhost:9090/folders', {
@@ -66,6 +64,7 @@ class App extends React.Component {
       return response.json()
     })
     .then(data => {
+      console.log(data)
       this.setState({
         notes: data
       })
@@ -83,7 +82,7 @@ class App extends React.Component {
       selectedNote: this.state.selectedNote,
       updateSelectedFolder: this.setSelectedFolder,
       updateSelectedNote: this.setSelectedNote,
-      // deleteNote: this.handleDeleteNote,
+      deleteNote: this.handleDeleteNote,
     }
     
     return (
