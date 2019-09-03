@@ -25,6 +25,7 @@ class NoteItem extends Component {
                      <p>{`Date modified on ${moment(this.props.modified).format('Do MMM YYYY')}`}</p>
                      <DeleteButton
                         id={this.props.id}
+                        // returnHome={() => this.props.history.push('/')}
                      />
                  </li>);
                 }}

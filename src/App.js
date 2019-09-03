@@ -34,6 +34,10 @@ class App extends React.Component {
     });
   }
 
+  // returnHome = () => {
+  //   this.props.history.push('/')}
+  // }
+
   componentDidMount() {
     fetch('http://localhost:9090/folders', {
       method: 'GET',
@@ -83,6 +87,7 @@ class App extends React.Component {
       updateSelectedFolder: this.setSelectedFolder,
       updateSelectedNote: this.setSelectedNote,
       handleDeleteNote: this.handleDeleteNote,
+      // returnHome: this.returnHome,
     }
     
     return (
