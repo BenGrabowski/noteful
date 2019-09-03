@@ -34,7 +34,12 @@ class DeleteButton extends Component {
             <NoteContext.Consumer>
                 {(context) => {
                      return (
-                        <button onClick={() => this.deleteNote(this.props.id)}>
+                        <button onClick={() => {
+                            this.deleteNote(this.props.id)
+                            context.handleDeleteNote(this.props.id)
+                            this.props.returnHome()
+                            }
+                        }>
                             Delete Note
                         </button>
                      );
