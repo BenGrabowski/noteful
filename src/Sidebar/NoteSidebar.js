@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import NoteContext from '../NoteContext';
+// import { withRouter } from 'react-router-dom';
 import './Sidebar.css';
 
 class NoteSidebar extends Component {
@@ -17,8 +18,12 @@ class NoteSidebar extends Component {
                     console.log(this.props.match.params)
                     console.log(context.notes)
                     // console.log(currentFolder) 
+                    if(currentNote === null) {
+                        return null
+                    }
                     return folder.id === currentNote.folderId});
-                   return (
+                   
+                    return (
                     <div className="sidebar">
                     <button 
                             onClick={() => this.props.history.goBack()}

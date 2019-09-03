@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import NoteContext from '../NoteContext';
+import { withRouter } from 'react-router-dom';
 
 class DeleteButton extends Component { 
     static contextType = NoteContext;
@@ -23,7 +24,9 @@ class DeleteButton extends Component {
                         .then(response => {
                             console.log(response)
                             this.context.handleDeleteNote(id)
-                            this.props.returnHome()
+                            // this.context.returnHome()
+                            console.log(this.props)
+                            this.props.history.push('/')
                         })
                         .catch(error => {
                             console.log(error)
@@ -50,4 +53,4 @@ class DeleteButton extends Component {
     }
 }
 
-export default DeleteButton;
+export default withRouter(DeleteButton);
