@@ -8,7 +8,7 @@ const NoteContext = React.createContext({
     setSelectedFolder: () => {},
     setSelectedNote: () => {},
     handleDeleteNote: () => {},
-    // returnHome: () => {},
+    returnHome: () => {},
 })
 
 export default NoteContext;

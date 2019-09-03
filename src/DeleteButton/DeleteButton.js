@@ -23,6 +23,7 @@ class DeleteButton extends Component {
                         .then(response => {
                             console.log(response)
                             this.context.handleDeleteNote(id)
+                            this.props.returnHome()
                         })
                         .catch(error => {
                             console.log(error)

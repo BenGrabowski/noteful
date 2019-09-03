@@ -3,6 +3,7 @@ import NoteContext from '../NoteContext';
 import DeleteButton from '../DeleteButton/DeleteButton';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
+import './NoteItem.css';
 
 
 class NoteItem extends Component {
@@ -25,7 +26,7 @@ class NoteItem extends Component {
                      <p>{`Date modified on ${moment(this.props.modified).format('Do MMM YYYY')}`}</p>
                      <DeleteButton
                         id={this.props.id}
-                        // returnHome={() => this.props.history.push('/')}
+                        returnHome={() => context.returnHome()}
                      />
                  </li>);
                 }}
