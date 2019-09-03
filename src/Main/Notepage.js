@@ -24,7 +24,10 @@ class NotePage extends Component {
                             //         />
                             // </div>
                             <div>
-                                <NoteItem />
+                                <NoteItem 
+                                    name={note.name}
+                                    id={note.id}
+                                />
                                 <p>{note.content}</p>
                             </div>
                         );
