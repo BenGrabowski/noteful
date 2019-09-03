@@ -18,10 +18,13 @@ class NoteSidebar extends Component {
                     console.log(this.props.match.params)
                     console.log(context.notes)
                     // console.log(currentFolder) 
-                    if(currentNote === null) {
+                    if(currentNote == null) {
                         return null
                     }
                     return folder.id === currentNote.folderId});
+
+                    let folderName = currentFolder !== undefined ? <p>{currentFolder.name}</p>
+                    : '';
                    
                     return (
                     <div className="sidebar">
@@ -31,7 +34,9 @@ class NoteSidebar extends Component {
                         >
                             Go back
                         </button>
-                    <p>{currentFolder.name}</p>
+                        <div>
+                            {folderName}
+                        </div>
                     </div>
                    ) 
                 }}
