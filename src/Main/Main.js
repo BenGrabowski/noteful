@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import MainPage from './MainPage';
 import NotePage from './Notepage';
+import AddFolder from '../AddFolder/AddFolder';
 import './Main.css';
 
 class Main extends Component {
@@ -19,6 +20,10 @@ class Main extends Component {
                 <Route 
                     path='/note/:noteId' 
                     component={NotePage} 
+                />
+                <Route
+                    path='/addFolder'
+                    component={AddFolder}
                 />
             </div>
         );

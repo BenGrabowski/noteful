@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import NoteContext from '../NoteContext';
-import DeleteButton from '../DeleteButton/DeleteButton';
-import moment from 'moment';
+// import DeleteButton from '../DeleteButton/DeleteButton';
+// import moment from 'moment';
 import NoteItem from '../NoteItem/NoteItem';
 
 class NotePage extends Component {
