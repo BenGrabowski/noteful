@@ -8,6 +8,7 @@ class AddFolder extends Component {
               value: '',
               touched: false
             }
+            // this.addFolderInput = React.createRef();
         }
     }
 
@@ -19,10 +20,11 @@ class AddFolder extends Component {
         event.preventDefault();
         
         const folderName = this.state.folderName.value;
+        console.log(folderName);
 
         fetch('http://localhost:9090/folders', {
                 method: 'POST',
-                body: folderName,
+                body: JSON.stringify(folderName),
                 headers: {
                     'content-type': 'application/json'
                 }
