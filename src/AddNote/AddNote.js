@@ -35,13 +35,13 @@ class AddNote extends Component {
 
     validateNoteName() {
         if(!this.state.noteName.value.length) {
-            return 'Note Name cannot be empty';
+            return 'Note name cannot be empty';
         }
     }
 
     validateNoteContent() {
         if(!this.state.noteContent.value.length) {
-            return 'Note Name cannot be empty';
+            return 'Note content cannot be empty';
         }
     }
 

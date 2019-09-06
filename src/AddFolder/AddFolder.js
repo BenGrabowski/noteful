@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ValidationError from '../ValidationError';
 import { Link } from 'react-router-dom';
+import './AddFolder.css';
 // import AddFolderError from './AddFolderError';
 
 class AddFolder extends Component {
@@ -59,21 +60,34 @@ class AddFolder extends Component {
     render() {
         return (
             <form id="addFolderForm" onSubmit={e => this.handleSubmit(e)}>
+                <fieldset>
+                    <legend>Add Form</legend>
                 <label htmlFor="folderName">Folder Name:</label>
                 <input 
                     type="text"
                     name="folderName"
                     onChange={e => this.updateFolderName(e.target.value)}
                 />
+                <br />
+
                 {this.state.folderName.touched && 
                     (<ValidationError message={this.validateFolderName()} />)}
+                
+                <div className="addFolderControls">
                 <button
                     type="submit"
-                    id="submitButton"
+                    id="addFolderButton"
                 >
-                    Add Form
+                    Add Folder
                 </button>
-                <Link to='/'>Cancel</Link>
+                <Link 
+                    to='/'
+                    className="cancel"
+                >
+                    Cancel
+                </Link>
+                </div>
+                </fieldset>
             </form>
         );
     }

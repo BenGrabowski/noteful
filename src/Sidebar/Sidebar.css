@@ -29,6 +29,11 @@
     width: 95%;
     height: 50px;
     margin-top: 5px;
+    text-decoration: none;
+    border: 1px black solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .go-back {
