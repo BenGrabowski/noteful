@@ -3,6 +3,9 @@ import { Route } from 'react-router-dom';
 import MainPage from './MainPage';
 import NotePage from './Notepage';
 import AddFolder from '../AddFolder/AddFolder';
+import AddFolderError from '../AddFolder/AddFolderError';
+import AddNote from '../AddNote/AddNote';
+import AddNoteError from '../AddNote/AddNoteError';
 import './Main.css';
 
 class Main extends Component {
@@ -21,13 +24,22 @@ class Main extends Component {
                     path='/note/:noteId' 
                     component={NotePage} 
                 />
-                <Route
-                    path='/addFolder'
-                    component={AddFolder}
-                />
+                <AddFolderError>
+                    <Route
+                        path='/addFolder'
+                        component={AddFolder}
+                    />
+                </AddFolderError>
+
+                <AddNoteError>
+                    <Route
+                        path='/addNote'
+                        component={AddNote}
+                    />
+                </AddNoteError>
             </div>
         );
     }
 }
 
-export default Main;
+export default Main; 

@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import ValidationError from '../ValidationError';
+import { Link } from 'react-router-dom';
+// import AddFolderError from './AddFolderError';
 
 class AddFolder extends Component {
     constructor(props) {
@@ -8,7 +11,6 @@ class AddFolder extends Component {
               value: '',
               touched: false
             }
-            // this.addFolderInput = React.createRef();
         }
     }
 
@@ -16,10 +18,16 @@ class AddFolder extends Component {
         this.setState({folderName: {value: folderName, touched: true}});
     }
 
+    validateFolderName() {
+        if(!this.state.folderName.value.length) {
+            return 'Folder Name cannot be empty';
+        }
+    }
+
     handleSubmit(event) {
         event.preventDefault();
         
-        const folderName = this.state.folderName.value;
+        const folderName = {name: this.state.folderName.value};
         console.log(folderName);
 
         fetch('http://localhost:9090/folders', {
@@ -38,7 +46,11 @@ class AddFolder extends Component {
             }
             return response.json()
         })
-        .then(console.log('New note successfully added'))
+        .then(response => {
+            console.log('New folder sucessfully added')    
+            this.props.history.push('/');
+
+        })
         .catch(error => {
             console.log(error)
         });
@@ -46,19 +58,22 @@ class AddFolder extends Component {
     
     render() {
         return (
-            <form onSubmit={e => this.handleSubmit(e)}>
+            <form id="addFolderForm" onSubmit={e => this.handleSubmit(e)}>
                 <label htmlFor="folderName">Folder Name:</label>
                 <input 
                     type="text"
                     name="folderName"
                     onChange={e => this.updateFolderName(e.target.value)}
                 />
+                {this.state.folderName.touched && 
+                    (<ValidationError message={this.validateFolderName()} />)}
                 <button
                     type="submit"
                     id="submitButton"
                 >
                     Add Form
                 </button>
+                <Link to='/'>Cancel</Link>
             </form>
         );
     }

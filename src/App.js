@@ -39,6 +39,10 @@ class App extends React.Component {
     this.props.history.push('/')
   }
 
+  // rerenderApp = () => {
+  //   this.setState({state: this.state});
+  // }
+
   componentDidMount() {
     fetch('http://localhost:9090/folders', {
       method: 'GET',
@@ -89,6 +93,7 @@ class App extends React.Component {
       updateSelectedNote: this.setSelectedNote,
       handleDeleteNote: this.handleDeleteNote,
       returnHome: this.returnHome,
+      // rerenderApp: this.rerenderApp
     }
     
     return (
@@ -97,7 +102,9 @@ class App extends React.Component {
           <Header />
           <main>
             <Sidebar />
-            <Main />
+            <Main 
+              rerender={() => this.rerenderApp()}
+            />
           </main>
         </div>
       </NoteContext.Provider>

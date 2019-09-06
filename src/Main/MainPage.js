@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import NoteContext from '../NoteContext';
 import NoteItem from '../NoteItem/NoteItem';
+// import AddNote from '../AddNote/AddNote';
 // import moment from 'moment';
 
 class MainPage extends Component {
@@ -39,6 +40,11 @@ class MainPage extends Component {
                         <div className="notes-wrapper">
                             <ul className="notes">
                                 {notes}
+                                <Link
+                                    to="/addNote"
+                                >
+                                    Add Note
+                                </Link>
                             </ul>
                         </div>
                     )

@@ -3,11 +3,19 @@ import NoteContext from '../NoteContext';
 import DeleteButton from '../DeleteButton/DeleteButton';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
+import PropTypes from 'prop-types';
 import './NoteItem.css';
 
 
 class NoteItem extends Component {
     render() {
+        NoteItem.propTypes = {
+            index: PropTypes.number,
+            id: PropTypes.string,
+            name: PropTypes.string,
+            modified: PropTypes.string
+        };
+        
         return (
             <NoteContext.Consumer>
                 {(context) => {

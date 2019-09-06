@@ -9,6 +9,7 @@ const NoteContext = React.createContext({
     setSelectedNote: () => {},
     handleDeleteNote: () => {},
     returnHome: () => {},
+    // rerenderApp: () => {}
 })
 
 export default NoteContext;
