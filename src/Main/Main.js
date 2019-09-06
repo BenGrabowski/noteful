@@ -31,7 +31,8 @@ class Main extends Component {
                         render={({ history }) => {
                             return <AddFolder
                                 history={history}
-                                rerender={() => this.props.rerender()}
+                                // rerender={() => this.props.rerender()}
+                                updateFolders={this.props.updateFolders}
                             />
                         }}
                     />

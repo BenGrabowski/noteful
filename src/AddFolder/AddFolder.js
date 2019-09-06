@@ -49,7 +49,9 @@ class AddFolder extends Component {
         })
         .then(response => {
             console.log('New folder sucessfully added')
-            this.props.rerender();    
+            console.log(response)
+            // this.props.rerender();
+            this.props.updateFolders(response);    
             this.props.history.push('/');
 
         })
