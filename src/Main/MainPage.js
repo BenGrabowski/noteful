@@ -42,6 +42,7 @@ class MainPage extends Component {
                                 {notes}
                                 <Link
                                     to="/addNote"
+                                    className="addNoteButton"
                                 >
                                     Add Note
                                 </Link>

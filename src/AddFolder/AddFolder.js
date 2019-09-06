@@ -48,7 +48,8 @@ class AddFolder extends Component {
             return response.json()
         })
         .then(response => {
-            console.log('New folder sucessfully added')    
+            console.log('New folder sucessfully added')
+            this.props.rerender();    
             this.props.history.push('/');
 
         })

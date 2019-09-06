@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ValidationError from '../ValidationError';
 import { Link } from 'react-router-dom';
+import './AddNote.css'
 
 class AddNote extends Component {
     constructor(props) {
@@ -85,49 +86,59 @@ class AddNote extends Component {
     
     render() {
         return (
-            <form id="addNoteForm" onSubmit={e => this.handleSubmit(e)}>
-                <label htmlFor="noteName">Name:</label>
-                <input 
-                    type="text"
-                    name="noteName"
-                    onChange={e => this.updateNoteName(e.target.value)}
-                />
-                {this.state.noteName.touched && 
-                    (<ValidationError message={this.validateNoteName()} />)}
-                <br />
+                <form id="addNoteForm" onSubmit={e => this.handleSubmit(e)}>
+                    <fieldset>
+                    <legend>Add Note</legend>
+                        <label htmlFor="noteName">Name:</label>
+                        <input 
+                            type="text"
+                            name="noteName"
+                            onChange={e => this.updateNoteName(e.target.value)}
+                        />
+                        {this.state.noteName.touched && 
+                            (<ValidationError message={this.validateNoteName()} />)}
+                        <br />
 
-                <label htmlFor="noteContent">Content: </label>
-                <textarea
-                    type="text"
-                    name="noteContent"
-                    onChange={e => this.updateNoteContent(e.target.value)}
-                />
-                {this.state.noteContent.touched && 
-                    (<ValidationError message={this.validateNoteContent()} />)}
-                <br />
+                        <label htmlFor="noteContent">Content: </label>
+                        <textarea
+                            type="text"
+                            name="noteContent"
+                            onChange={e => this.updateNoteContent(e.target.value)}
+                        />
+                        {this.state.noteContent.touched && 
+                            (<ValidationError message={this.validateNoteContent()} />)}
+                        <br />
 
-                <label htmlFor="noteFolder">Folder:</label>
-                <select
-                    name="noteFolder"
-                    onChange={e => this.updateNoteFolder(e.target.value)}
-                >
-                    <option value="selectOne">Select One</option>
-                    <option value="">Important</option>
-                    <option value="">Super</option>
-                    <option value="">Spangley</option>
-                </select>                    
-                {this.state.noteContent.touched && 
-                    (<ValidationError message={this.validateNoteFolder()} />)}
-                <br />
+                        <label htmlFor="noteFolder">Folder:</label>
+                        <select
+                            name="noteFolder"
+                            onChange={e => this.updateNoteFolder(e.target.value)}
+                        >
+                            <option value="selectOne">Select One</option>
+                            <option value="">Important</option>
+                            <option value="">Super</option>
+                            <option value="">Spangley</option>
+                        </select>                    
+                        {this.state.noteContent.touched && 
+                            (<ValidationError message={this.validateNoteFolder()} />)}
+                        <br />
 
-                <button
-                    type="submit"
-                    id="submitButton"
-                >
-                    Add Note
-                </button>
-                <Link to='/'>Cancel</Link>
-            </form>
+                        <div className="addNoteControls">
+                            <button
+                                type="submit"
+                                id="addNoteButton"
+                            >
+                                Add Note
+                            </button>
+                            <Link 
+                                to='/'
+                                className="cancel"
+                            >
+                                Cancel
+                            </Link>
+                        </div>
+                    </fieldset>
+                </form>
         )
     }
 }

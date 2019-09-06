@@ -27,7 +27,13 @@ class Main extends Component {
                 <AddFolderError>
                     <Route
                         path='/addFolder'
-                        component={AddFolder}
+                        // component={AddFolder}
+                        render={({ history }) => {
+                            return <AddFolder
+                                history={history}
+                                rerender={() => this.props.rerender()}
+                            />
+                        }}
                     />
                 </AddFolderError>
 

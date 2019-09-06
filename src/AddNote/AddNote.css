@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+}
+
+#addNoteButton {
+    width: 100px;
+    height: 30px;
+}
+
+.cancel {
+    width: 100px;
+    height: 30px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.addNoteControls {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+    padding: 5px;
+}
+
+#addNoteForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+fieldset {
+    width: 80%;
+}

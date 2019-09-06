@@ -39,9 +39,9 @@ class App extends React.Component {
     this.props.history.push('/')
   }
 
-  // rerenderApp = () => {
-  //   this.setState({state: this.state});
-  // }
+  rerenderApp = () => {
+    this.setState({state: this.state});
+  }
 
   componentDidMount() {
     fetch('http://localhost:9090/folders', {
