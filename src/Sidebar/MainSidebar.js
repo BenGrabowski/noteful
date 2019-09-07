@@ -10,6 +10,7 @@ class MainSidebar extends Component {
                 {(context) => {
                   console.log(context)
                   const folders = context.folders.map((folder, index) => {
+                    console.log(folder)
                     return (
                         <li key={index} className="folder">
                             <Link 
@@ -22,7 +23,7 @@ class MainSidebar extends Component {
                             </Link>
                         </li>
                     );
-                });      
+                });   
                         return (
                             <div className="sidebar">
                                 <ul className="sidebar-list">

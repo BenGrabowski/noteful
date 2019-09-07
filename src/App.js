@@ -44,7 +44,9 @@ class App extends React.Component {
   // }
 
   updateFolders = (newFolder) => {
-    this.setState({folders: this.state.folders.push(newFolder)});
+    const newFolders = this.state.folders.push(newFolder);
+    
+    this.setState({folders: newFolders});
     console.log('updateFolders ran')
     console.log(newFolder)
     console.log(this.state.folders)
@@ -112,7 +114,7 @@ class App extends React.Component {
             <Sidebar />
             <Main 
               // rerender={() => this.rerenderApp()}
-              updateFolders={this.updateFolders()}
+              updateFolders={this.updateFolders}
             />
           </main>
         </div>
