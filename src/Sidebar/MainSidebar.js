@@ -8,6 +8,7 @@ class MainSidebar extends Component {
         return (
             <NoteContext.Consumer>
                 {(context) => {
+                  console.log(context)
                   const folders = context.folders.map((folder, index) => {
                     return (
                         <li key={index} className="folder">
