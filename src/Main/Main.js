@@ -27,11 +27,9 @@ class Main extends Component {
                 <AddFolderError>
                     <Route
                         path='/addFolder'
-                        // component={AddFolder}
                         render={({ history }) => {
                             return <AddFolder
                                 history={history}
-                                // rerender={() => this.props.rerender()}
                                 updateFolders={this.props.updateFolders}
                             />
                         }}
@@ -41,7 +39,13 @@ class Main extends Component {
                 <AddNoteError>
                     <Route
                         path='/addNote'
-                        component={AddNote}
+                        // component={AddNote}
+                        render={( {history }) => {
+                            return <AddNote
+                                history={history}
+                                updateNotes={this.props.updateNotes}
+                            />
+                        }}
                     />
                 </AddNoteError>
             </div>

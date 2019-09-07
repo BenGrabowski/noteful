@@ -39,17 +39,17 @@ class App extends React.Component {
     this.props.history.push('/')
   }
 
-  // rerenderApp = () => {
-  //   this.setState({state: this.state});
-  // }
-
   updateFolders = (newFolder) => {
-    const newFolders = this.state.folders.push(newFolder);
-    
-    this.setState({folders: newFolders});
+    this.state.folders.push(newFolder);
+    this.setState({folders: this.state.folders});
     console.log('updateFolders ran')
     console.log(newFolder)
     console.log(this.state.folders)
+  }
+
+  updateNotes = (newNote) => {
+    this.state.notes.push(newNote)
+    this.setState({notes: this.state.notes})
   }
 
   componentDidMount() {
@@ -113,8 +113,8 @@ class App extends React.Component {
           <main>
             <Sidebar />
             <Main 
-              // rerender={() => this.rerenderApp()}
               updateFolders={this.updateFolders}
+              updateNotes={this.updateNotes}
             />
           </main>
         </div>

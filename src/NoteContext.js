@@ -10,7 +10,7 @@ const NoteContext = React.createContext({
     handleDeleteNote: () => {},
     returnHome: () => {},
     // rerenderApp: () => {}
-    updateFolders: () => {}
+    // updateFolders: () => {}
 })
 
 export default NoteContext;

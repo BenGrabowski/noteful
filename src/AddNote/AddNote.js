@@ -77,6 +77,7 @@ class AddNote extends Component {
         })
         .then(response => {
             console.log('Note added successfully');
+            this.props.updateNotes(response);
             this.props.history.push('/');
         })
         .catch(error => {
@@ -115,9 +116,9 @@ class AddNote extends Component {
                             onChange={e => this.updateNoteFolder(e.target.value)}
                         >
                             <option value="selectOne">Select One</option>
-                            <option value="">Important</option>
-                            <option value="">Super</option>
-                            <option value="">Spangley</option>
+                            <option value="b0715efe-ffaf-11e8-8eb2-f2801f1b9fd1">Important</option>
+                            <option value="b07161a6-ffaf-11e8-8eb2-f2801f1b9fd1">Super</option>
+                            <option value="b07162f0-ffaf-11e8-8eb2-f2801f1b9fd1">Spangley</option>
                         </select>                    
                         {this.state.noteContent.touched && 
                             (<ValidationError message={this.validateNoteFolder()} />)}
