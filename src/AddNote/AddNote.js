@@ -62,8 +62,10 @@ class AddNote extends Component {
             folderId: this.state.noteFolder.value
         };
         console.log(note);
-
-        fetch('http://localhost:9090/notes', {
+        if(note.name === "" || (note.folderId === "selectOne" || note.folderId === "")) {
+            console.log('Note name is empty or no folder selected');
+        } else {
+            fetch('http://localhost:9090/notes', {
             method: 'POST',
             body: JSON.stringify(note),
             headers: {
@@ -85,6 +87,7 @@ class AddNote extends Component {
         .catch(error => {
             console.log(error)
         })
+        }
     }
     
     render() {

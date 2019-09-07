@@ -27,11 +27,12 @@ class AddFolder extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        
         const folderName = {name: this.state.folderName.value};
         console.log(folderName);
-
-        fetch('http://localhost:9090/folders', {
+        if(folderName.name === "") {
+            console.log('Empty folder name submitted');
+        } else {
+            fetch('http://localhost:9090/folders', {
                 method: 'POST',
                 body: JSON.stringify(folderName),
                 headers: {
@@ -57,6 +58,7 @@ class AddFolder extends Component {
         .catch(error => {
             console.log(error)
         });
+        }
     }
     
     render() {
