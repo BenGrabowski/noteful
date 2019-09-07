@@ -6,10 +6,16 @@ import AddFolder from '../AddFolder/AddFolder';
 import AddFolderError from '../AddFolder/AddFolderError';
 import AddNote from '../AddNote/AddNote';
 import AddNoteError from '../AddNote/AddNoteError';
+import PropTypes from 'prop-types';
 import './Main.css';
 
 class Main extends Component {
     render() {
+        Main.propTypes = {
+            updateFolders: PropTypes.func.isRequired,
+            updateNotes: PropTypes.func.isRequired
+        };
+    
         return (
             <div className="Main">
                 <Route 
@@ -39,7 +45,6 @@ class Main extends Component {
                 <AddNoteError>
                     <Route
                         path='/addNote'
-                        // component={AddNote}
                         render={( {history }) => {
                             return <AddNote
                                 history={history}

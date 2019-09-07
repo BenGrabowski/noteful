@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ValidationError from '../ValidationError';
 import { Link } from 'react-router-dom';
 import './AddFolder.css';
-// import AddFolderError from './AddFolderError';
+import PropTypes from 'prop-types';
 
 class AddFolder extends Component {
     constructor(props) {
@@ -50,7 +50,6 @@ class AddFolder extends Component {
         .then(response => {
             console.log('New folder sucessfully added')
             console.log(response)
-            // this.props.rerender();
             this.props.updateFolders(response);    
             this.props.history.push('/');
 
@@ -61,6 +60,11 @@ class AddFolder extends Component {
     }
     
     render() {
+        AddFolder.propTypes = {
+            history: PropTypes.object.isRequired,
+            updateFolders: PropTypes.func.isRequired
+        };
+        
         return (
             <form id="addFolderForm" onSubmit={e => this.handleSubmit(e)}>
                 <fieldset>

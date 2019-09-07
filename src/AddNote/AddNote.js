@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import ValidationError from '../ValidationError';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import NoteContext from '../NoteContext';
 import './AddNote.css'
 
 class AddNote extends Component {
@@ -57,7 +59,7 @@ class AddNote extends Component {
         const note = {
             name: this.state.noteName.value,
             content: this.state.noteContent.value,
-            folder: this.state.noteFolder.value
+            folderId: this.state.noteFolder.value
         };
         console.log(note);
 
@@ -86,8 +88,16 @@ class AddNote extends Component {
     }
     
     render() {
+        AddNote.propTypes = {
+            history: PropTypes.object.isRequired,
+            updateNotes: PropTypes.func.isRequired
+        };
+        
         return (
-                <form id="addNoteForm" onSubmit={e => this.handleSubmit(e)}>
+            <NoteContext.Consumer>
+                {(context) => {
+                    return (
+                    <form id="addNoteForm" onSubmit={e => this.handleSubmit(e)}>
                     <fieldset>
                     <legend>Add Note</legend>
                         <label htmlFor="noteName">Name:</label>
@@ -115,12 +125,18 @@ class AddNote extends Component {
                             name="noteFolder"
                             onChange={e => this.updateNoteFolder(e.target.value)}
                         >
-                            <option value="selectOne">Select One</option>
+                            {/* <option value="selectOne">Select One</option>
                             <option value="b0715efe-ffaf-11e8-8eb2-f2801f1b9fd1">Important</option>
                             <option value="b07161a6-ffaf-11e8-8eb2-f2801f1b9fd1">Super</option>
-                            <option value="b07162f0-ffaf-11e8-8eb2-f2801f1b9fd1">Spangley</option>
+                            <option value="b07162f0-ffaf-11e8-8eb2-f2801f1b9fd1">Spangley</option> */}
+                            <option value="selectOne">Select One</option>
+                            {context.folders.map((folder, index) => {
+                                return (
+                                    <option value={`${folder.id}`} key={index}>{folder.name}</option>
+                                )
+                            })}
                         </select>                    
-                        {this.state.noteContent.touched && 
+                        {this.state.noteFolder.touched && 
                             (<ValidationError message={this.validateNoteFolder()} />)}
                         <br />
 
@@ -139,9 +155,14 @@ class AddNote extends Component {
                             </Link>
                         </div>
                     </fieldset>
-                </form>
+                    </form>)}
+                }
+            </NoteContext.Consumer>
+
         )
-    }
+    }              
 }
+   
+
 
 export default AddNote;

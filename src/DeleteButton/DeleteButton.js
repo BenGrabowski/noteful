@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import NoteContext from '../NoteContext';
 import { withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class DeleteButton extends Component { 
     static contextType = NoteContext;
@@ -24,7 +25,6 @@ class DeleteButton extends Component {
                         .then(response => {
                             console.log(response)
                             this.context.handleDeleteNote(id)
-                            // this.context.returnHome()
                             console.log(this.props)
                             this.props.history.push('/')
                         })
@@ -34,14 +34,17 @@ class DeleteButton extends Component {
                     }
     
     render() {
+        DeleteButton.propTypes = {
+            id: PropTypes.string.isRequired,
+        }
+        
         return (
             <NoteContext.Consumer>
                 {(context) => {
                      return (
                         <button onClick={() => {
-                            this.deleteNote(this.props.id)
-                            context.handleDeleteNote(this.props.id)
-                            // this.props.returnHome()
+                                this.deleteNote(this.props.id)
+                                context.handleDeleteNote(this.props.id)
                             }
                         }>
                             Delete Note

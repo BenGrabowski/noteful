@@ -25,7 +25,6 @@ class NoteItem extends Component {
                         className="note-item">
                      <Link 
                          to={`/note/${this.props.id}`}
-                        // to={'/note/:noteId'}
                          className="note-link"
                          onClick={e => context.updateSelectedNote(this.props.id)}
                      >

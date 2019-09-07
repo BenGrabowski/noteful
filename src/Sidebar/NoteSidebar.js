@@ -17,7 +17,6 @@ class NoteSidebar extends Component {
                    const currentFolder = context.folders.find(folder => {
                     console.log(this.props.match.params)
                     console.log(context.notes)
-                    // console.log(currentFolder) 
                     if(currentNote == null) {
                         return null
                     }

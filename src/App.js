@@ -34,11 +34,6 @@ class App extends React.Component {
     });
   }
 
-  returnHome = () => {
-    console.log('returnHome ran')
-    this.props.history.push('/')
-  }
-
   updateFolders = (newFolder) => {
     this.state.folders.push(newFolder);
     this.setState({folders: this.state.folders});
@@ -101,8 +96,6 @@ class App extends React.Component {
       updateSelectedFolder: this.setSelectedFolder,
       updateSelectedNote: this.setSelectedNote,
       handleDeleteNote: this.handleDeleteNote,
-      returnHome: this.returnHome,
-      // rerenderApp: this.rerenderApp
       updateFolders: this.updateFolders,
     }
     
