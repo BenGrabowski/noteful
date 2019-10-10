@@ -8,7 +8,7 @@ class DeleteButton extends Component {
     
     deleteNote = (id) => {
                         console.log('deleteNote ran')
-                        fetch(`http://localhost:9090/notes/${id}`, {
+                        fetch(`http://localhost:8000/notes/${id}`, {
                             method: 'DELETE',
                             headers: {
                                 'content-type': 'application/json'
@@ -35,7 +35,7 @@ class DeleteButton extends Component {
     
     render() {
         DeleteButton.propTypes = {
-            id: PropTypes.string.isRequired,
+            id: PropTypes.number.isRequired,
         }
         
         return (

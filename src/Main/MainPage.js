@@ -12,7 +12,7 @@ class MainPage extends Component {
                      let  notes = undefined;
              
                      selectedFolder !== ''
-                     ? notes = context.notes.filter(note => note.folderId === selectedFolder).map((note, index) => {
+                     ? notes = context.notes.filter(note => note.folder === selectedFolder).map((note, index) => {
                          return (
                             <NoteItem 
                                 key={index}

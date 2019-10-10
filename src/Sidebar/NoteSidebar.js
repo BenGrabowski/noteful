@@ -17,7 +17,7 @@ class NoteSidebar extends Component {
                     if(currentNote == null) {
                         return null
                     }
-                    return folder.id === currentNote.folderId});
+                    return folder.id === currentNote.folder});
 
                     let folderName = currentFolder !== undefined ? <p>{currentFolder.folder_name}</p>
                     : '';
