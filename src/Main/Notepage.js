@@ -13,7 +13,7 @@ class NotePage extends Component {
                         return (
                             <div key={index}>
                                 <NoteItem 
-                                    name={note.name}
+                                    name={note.note_name}
                                     id={note.id}
                                 />
                                 <p>{note.content}</p>

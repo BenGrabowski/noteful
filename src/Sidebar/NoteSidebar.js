@@ -1,17 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import NoteContext from '../NoteContext';
-// import { withRouter } from 'react-router-dom';
 import './Sidebar.css';
 
 class NoteSidebar extends Component {
-    // static contextType = NoteContext;
     
     render() {
         console.log(this.props)
         return (
             <NoteContext.Consumer>
                 {(context) => {
-                //    const currentNote = context.notes.filter(note => note.id === context.selectedNote);
                    const currentNote = context.notes.find(note => note.id === this.props.match.params.noteId);
                    console.log(currentNote)
                    const currentFolder = context.folders.find(folder => {
@@ -22,12 +19,12 @@ class NoteSidebar extends Component {
                     }
                     return folder.id === currentNote.folderId});
 
-                    let folderName = currentFolder !== undefined ? <p>{currentFolder.name}</p>
+                    let folderName = currentFolder !== undefined ? <p>{currentFolder.folder_name}</p>
                     : '';
                    
                     return (
-                    <div className="sidebar">
-                    <button 
+                    <Fragment>
+                         <button 
                             onClick={() => this.props.history.goBack()}
                             className="go-back"
                         >
@@ -36,7 +33,7 @@ class NoteSidebar extends Component {
                         <div>
                             {folderName}
                         </div>
-                    </div>
+                    </Fragment>                   
                    ) 
                 }}
             </NoteContext.Consumer>

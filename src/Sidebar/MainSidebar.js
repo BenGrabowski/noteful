@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import NoteContext from '../NoteContext';
 import './Sidebar.css';
@@ -19,23 +19,26 @@ class MainSidebar extends Component {
                                 className="folder-link"
                                 id={folder.id}
                             >
-                                {folder.name}
+                                {folder.folder_name}
                             </Link>
                         </li>
                     );
                 });   
                         return (
-                            <div className="sidebar">
-                                <ul className="sidebar-list">
+                            // <div className="sidebar">
+                            <Fragment>
+                                 <ul className="sidebar-list">
                                     {folders}
-                                    <Link 
+                                </ul>
+                                <Link 
                                         className="add-folder"
                                         to="/addFolder"
                                     >
                                         Add folder
                                     </Link>
-                                </ul>
-                            </div>
+                            </Fragment>
+                               
+                            // </div>
                         )
                     }
                 }

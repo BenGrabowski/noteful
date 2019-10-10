@@ -18,7 +18,7 @@ class MainPage extends Component {
                                 key={index}
                                 index={index}
                                 id={note.id}
-                                name={note.name}
+                                name={note.note_name}
                                 modified={note.modified}
                             />
                          ); 
@@ -29,7 +29,7 @@ class MainPage extends Component {
                                 key={index}
                                 index={index}
                                 id={note.id}
-                                name={note.name}
+                                name={note.note_name}
                                 modified={note.modified} 
                             />
                          ); 
@@ -38,13 +38,13 @@ class MainPage extends Component {
                         <div className="notes-wrapper">
                             <ul className="notes">
                                 {notes}
-                                <Link
+                            </ul>
+                            <Link
                                     to="/addNote"
                                     className="addNoteButton"
                                 >
                                     Add Note
                                 </Link>
-                            </ul>
                         </div>
                     )
                 }}

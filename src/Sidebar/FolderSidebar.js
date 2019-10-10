@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import NoteContext from '../NoteContext';
 import './Sidebar.css';
@@ -19,13 +19,13 @@ class FolderSidebar extends Component {
                                     onClick={e => context.updateSelectedFolder(e.target.id)}
                                     id={folder.id}
                                 >
-                                    {folder.name}
+                                    {folder.folder_name}
                                 </Link>
                             </li>
                         );
                     });
                     return (
-                        <div className="sidebar">
+                        <Fragment>
                             <ul className="sidebar-list">
                                 {folders}
                                 <Link 
@@ -35,7 +35,7 @@ class FolderSidebar extends Component {
                                         Add folder
                                     </Link>
                             </ul>
-                        </div>
+                        </Fragment>
                     )
                 }}
             </NoteContext.Consumer>

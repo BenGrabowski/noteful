@@ -4,7 +4,6 @@ import MainSidebar from './MainSidebar';
 import FolderSidebar from './FolderSidebar';
 import NoteSidebar from './NoteSidebar';
 import './Sidebar.css';
-// import Main from '../Main/Main';
 
 export default class Sidebar extends Component {
     render() {

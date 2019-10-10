@@ -27,12 +27,12 @@ class AddFolder extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        const folderName = {name: this.state.folderName.value};
+        const folderName = {folder_name: this.state.folderName.value};
         console.log(folderName);
         if(folderName.name === "") {
             console.log('Empty folder name submitted');
         } else {
-            fetch('http://localhost:9090/folders', {
+            fetch('http://localhost:8000/api/folders/addFolder', {
                 method: 'POST',
                 body: JSON.stringify(folderName),
                 headers: {
@@ -75,6 +75,7 @@ class AddFolder extends Component {
                 <input 
                     type="text"
                     name="folderName"
+                    id="folderName"
                     onChange={e => this.updateFolderName(e.target.value)}
                 />
                 <br />

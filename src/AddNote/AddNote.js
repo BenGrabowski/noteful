@@ -107,6 +107,7 @@ class AddNote extends Component {
                         <input 
                             type="text"
                             name="noteName"
+                            id="noteName"
                             onChange={e => this.updateNoteName(e.target.value)}
                         />
                         {this.state.noteName.touched && 
@@ -117,6 +118,7 @@ class AddNote extends Component {
                         <textarea
                             type="text"
                             name="noteContent"
+                            id="noteContent"
                             onChange={e => this.updateNoteContent(e.target.value)}
                         />
                         {this.state.noteContent.touched && 
@@ -126,12 +128,9 @@ class AddNote extends Component {
                         <label htmlFor="noteFolder">Folder:</label>
                         <select
                             name="noteFolder"
+                            id="noteFolder"
                             onChange={e => this.updateNoteFolder(e.target.value)}
                         >
-                            {/* <option value="selectOne">Select One</option>
-                            <option value="b0715efe-ffaf-11e8-8eb2-f2801f1b9fd1">Important</option>
-                            <option value="b07161a6-ffaf-11e8-8eb2-f2801f1b9fd1">Super</option>
-                            <option value="b07162f0-ffaf-11e8-8eb2-f2801f1b9fd1">Spangley</option> */}
                             <option value="selectOne">Select One</option>
                             {context.folders.map((folder, index) => {
                                 return (

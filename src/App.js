@@ -15,14 +15,12 @@ class App extends React.Component {
   }
   
   setSelectedFolder = (id) => {
-    console.log(id);
     this.setState({
       selectedFolder: id
     });
   }
 
   setSelectedNote = (id) => {
-    console.log(id);
     this.setState({
       selectedNote: id
     });
@@ -37,9 +35,6 @@ class App extends React.Component {
   updateFolders = (newFolder) => {
     this.state.folders.push(newFolder);
     this.setState({folders: this.state.folders});
-    console.log('updateFolders ran')
-    console.log(newFolder)
-    console.log(this.state.folders)
   }
 
   updateNotes = (newNote) => {
@@ -48,7 +43,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:9090/folders', {
+    fetch('http://localhost:8000/api/folders', {
       method: 'GET',
       headers: {
         'content-type': 'application/json'
@@ -69,7 +64,7 @@ class App extends React.Component {
       console.log(error.message)
     });
 
-    fetch('http://localhost:9090/notes', {method: 'GET'})
+    fetch('http://localhost:8000/api/notes', {method: 'GET'})
     .then(response => {
       if (!response.ok) {
         throw new Error(response.status)

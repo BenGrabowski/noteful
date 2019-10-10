@@ -11,8 +11,8 @@ class NoteItem extends Component {
     render() {
         NoteItem.propTypes = {
             index: PropTypes.number,
-            id: PropTypes.string,
-            name: PropTypes.string,
+            id: PropTypes.number,
+            note_name: PropTypes.string,
             modified: PropTypes.string
         };
         
@@ -24,7 +24,7 @@ class NoteItem extends Component {
                         key={this.props.index}
                         className="note-item">
                      <Link 
-                         to={`/note/${this.props.id}`}
+                         to={`/notes/${this.props.id}`}
                          className="note-link"
                          onClick={e => context.updateSelectedNote(this.props.id)}
                      >
@@ -33,7 +33,7 @@ class NoteItem extends Component {
                      <p>{`Date modified on ${moment(this.props.modified).format('Do MMM YYYY')}`}</p>
                      <DeleteButton
                         id={this.props.id}
-                        returnHome={() => context.returnHome()}
+                        // returnHome={() => context.returnHome()}
                      />
                  </li>);
                 }}
