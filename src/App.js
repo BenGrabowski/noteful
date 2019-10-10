@@ -88,7 +88,7 @@ class App extends React.Component {
       notes: this.state.notes,
       selectedFolder: this.state.selectedFolder,
       selectedNote: this.state.selectedNote,
-      updateSelectedFolder: this.setSelectedFolder,
+      setSelectedFolder: this.setSelectedFolder,
       updateSelectedNote: this.setSelectedNote,
       handleDeleteNote: this.handleDeleteNote,
       updateFolders: this.updateFolders,
