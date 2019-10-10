@@ -13,7 +13,8 @@ class NoteItem extends Component {
             index: PropTypes.number,
             id: PropTypes.number,
             note_name: PropTypes.string,
-            modified: PropTypes.string
+            modified: PropTypes.string,
+            folder: PropTypes.number
         };
         
         return (
@@ -26,7 +27,7 @@ class NoteItem extends Component {
                      <Link 
                          to={`note/${this.props.id}`}
                          className="note-link"
-                         onClick={e => context.updateSelectedNote(this.props.id)}
+                         onClick={e => context.setSelectedNote(this.props.id)}
                      >
                          <h2>{this.props.name}</h2>
                      </Link>

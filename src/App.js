@@ -10,8 +10,8 @@ class App extends React.Component {
   state = {
     folders: [],
     notes: [],
-    selectedFolder: '',
-    selectedNote: '',
+    selectedFolder: undefined,
+    selectedNote: undefined,
   }
   
   setSelectedFolder = (id) => {
@@ -89,7 +89,7 @@ class App extends React.Component {
       selectedFolder: this.state.selectedFolder,
       selectedNote: this.state.selectedNote,
       setSelectedFolder: this.setSelectedFolder,
-      updateSelectedNote: this.setSelectedNote,
+      setSelectedNote: this.setSelectedNote,
       handleDeleteNote: this.handleDeleteNote,
       updateFolders: this.updateFolders,
     }

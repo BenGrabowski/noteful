@@ -15,7 +15,7 @@ class MainSidebar extends Component {
                         <li key={index} className="folder">
                             <Link 
                                 to={`/folder/${folder.id}`}
-                                onClick={e => context.setSelectedFolder(e.target.id)}
+                                onClick={e => context.setSelectedFolder(parseInt(e.target.id))}
                                 className="folder-link"
                                 id={folder.id}
                             >

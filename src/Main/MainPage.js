@@ -11,7 +11,7 @@ class MainPage extends Component {
                      let selectedFolder = context.selectedFolder
                      let  notes = undefined;
              
-                     selectedFolder !== ''
+                     selectedFolder !== undefined
                      ? notes = context.notes.filter(note => note.folder === selectedFolder).map((note, index) => {
                          return (
                             <NoteItem 

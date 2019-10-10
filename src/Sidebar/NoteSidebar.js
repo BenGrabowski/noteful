@@ -21,6 +21,7 @@ class NoteSidebar extends Component {
 
                     let folderName = currentFolder !== undefined ? <p>{currentFolder.folder_name}</p>
                     : '';
+                    console.log(folderName)
                    
                     return (
                     <Fragment>

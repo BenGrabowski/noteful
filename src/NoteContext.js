@@ -3,8 +3,8 @@ import React from 'react';
 const NoteContext = React.createContext({
     notes: [],
     folders: [],
-    selectedFolder: '',
-    selectedNote: '',
+    selectedFolder: undefined,
+    selectedNote: undefined,
     setSelectedFolder: () => {},
     setSelectedNote: () => {},
     handleDeleteNote: () => {},

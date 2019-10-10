@@ -13,8 +13,8 @@ export default class Header extends Component {
                                 <Link 
                                     to='/'
                                     onClick={e => {
-                                        context.setSelectedFolder('');
-                                        context.updateSelectedNote('');
+                                        context.setSelectedFolder(undefined);
+                                        context.setSelectedNote(undefined);
                                         }
                                     }
                                 >

@@ -16,7 +16,7 @@ class FolderSidebar extends Component {
                                 <Link 
                                     to={`/folder/${folder.id}`}
                                     className="folder-link"
-                                    onClick={e => context.setSelectedFolder(e.target.id)}
+                                    onClick={e => context.setSelectedFolder(parseInt(e.target.id))}
                                     id={folder.id}
                                 >
                                     {folder.folder_name}
