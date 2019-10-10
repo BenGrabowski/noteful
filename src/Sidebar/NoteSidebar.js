@@ -5,15 +5,12 @@ import './Sidebar.css';
 class NoteSidebar extends Component {
     
     render() {
-        console.log(this.props)
         return (
             <NoteContext.Consumer>
                 {(context) => {
-                   const currentNote = context.notes.find(note => note.id === this.props.match.params.noteId);
+                   const currentNote = context.notes.find(note => note.id === parseInt(this.props.match.params.noteId));
                    console.log(currentNote)
                    const currentFolder = context.folders.find(folder => {
-                    console.log(this.props.match.params)
-                    console.log(context.notes)
                     if(currentNote == null) {
                         return null
                     }
@@ -21,7 +18,6 @@ class NoteSidebar extends Component {
 
                     let folderName = currentFolder !== undefined ? <p>{currentFolder.folder_name}</p>
                     : '';
-                    console.log(folderName)
                    
                     return (
                     <Fragment>

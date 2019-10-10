@@ -8,9 +8,7 @@ class MainSidebar extends Component {
         return (
             <NoteContext.Consumer>
                 {(context) => {
-                  console.log(context)
                   const folders = context.folders.map((folder, index) => {
-                    console.log(folder)
                     return (
                         <li key={index} className="folder">
                             <Link 
@@ -25,7 +23,6 @@ class MainSidebar extends Component {
                     );
                 });   
                         return (
-                            // <div className="sidebar">
                             <Fragment>
                                  <ul className="sidebar-list">
                                     {folders}
@@ -37,8 +34,6 @@ class MainSidebar extends Component {
                                         Add folder
                                     </Link>
                             </Fragment>
-                               
-                            // </div>
                         )
                     }
                 }

@@ -7,8 +7,8 @@ class NotePage extends Component {
         return (
             <NoteContext.Consumer>
                 {(context) => {                    
-                    console.log(this.props.match.params)
-                    const note = context.notes.filter(note => note.id === this.props.match.params.noteId)
+                    console.log(parseInt(this.props.match.params.noteId))
+                    const note = context.notes.filter(note => note.id === parseInt(this.props.match.params.noteId))
                     .map((note, index) => {
                         return (
                             <div key={index}>
