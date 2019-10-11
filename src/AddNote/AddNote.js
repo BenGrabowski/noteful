@@ -57,15 +57,16 @@ class AddNote extends Component {
     handleSubmit(event) {
         event.preventDefault();
         const note = {
-            name: this.state.noteName.value,
+            note_name: this.state.noteName.value,
             content: this.state.noteContent.value,
-            folderId: this.state.noteFolder.value
+            folder: this.state.noteFolder.value,
+            modified: new Date(),
         };
         console.log(note);
         if(note.name === "" || (note.folderId === "selectOne" || note.folderId === "")) {
             console.log('Note name is empty or no folder selected');
         } else {
-            fetch('http://localhost:9090/notes', {
+            fetch('http://localhost:8000/api/notes/addNote', {
             method: 'POST',
             body: JSON.stringify(note),
             headers: {
@@ -134,7 +135,7 @@ class AddNote extends Component {
                             <option value="selectOne">Select One</option>
                             {context.folders.map((folder, index) => {
                                 return (
-                                    <option value={`${folder.id}`} key={index}>{folder.name}</option>
+                                    <option value={`${folder.id}`} key={index}>{folder.folder_name}</option>
                                 )
                             })}
                         </select>                    
