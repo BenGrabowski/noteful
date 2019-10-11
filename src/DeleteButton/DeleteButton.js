@@ -20,12 +20,12 @@ class DeleteButton extends Component {
                                     throw error
                                 })
                             }
-                            return response.json()
+                            // return response.json()
                         })
                         .then(response => {
-                            console.log(response)
+                            // console.log(response)
                             this.context.handleDeleteNote(id)
-                            console.log(this.props)
+                            // console.log(this.props)
                             this.props.history.push('/')
                         })
                         .catch(error => {
