@@ -112,6 +112,7 @@ class App extends React.Component {
             <Main 
               updateFolders={this.updateFolders}
               updateNotes={this.updateNotes}
+              handleUpdateNote={this.handleUpdateNote}
             />
           </main>
         </div>

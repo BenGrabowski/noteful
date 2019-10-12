@@ -56,12 +56,13 @@ class Main extends Component {
                 </AddNoteError>
                 <Route
                     path='/updateNote/:noteId'
-                    render={( {history} ) => {
-                        return <UpdateNote
-                            history={history}
-                            updateNotes={this.props.updateNotes}
-                        />
-                    }}
+                    // render={( {history} ) => {
+                    //     return <UpdateNote
+                    //         history={history}
+                    //         updateNotes={this.props.handleUpdateNote}
+                    //     />
+                    // }}
+                    component={UpdateNote}
                 />
             </div>
         );

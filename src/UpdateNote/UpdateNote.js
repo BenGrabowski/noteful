@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import NoteContext from '../NoteContext';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 class UpdateNote extends Component {
     static propTypes = {
@@ -24,6 +25,7 @@ class UpdateNote extends Component {
     };
 
     componentDidMount() {
+        console.log(this.props.match)
         const { noteId } = this.props.match.params
         fetch(`https://desolate-caverns-20141.herokuapp.com/api/notes/${noteId}`, {
             method: 'GET'
@@ -105,7 +107,7 @@ class UpdateNote extends Component {
 
 
 render() {
-    const {error, note_name, content, modified, folder } = this.state
+    const { note_name, content, folder } = this.state
     return (
         <form id="updateNoteForm" onSubmit={e => this.handleSubmit(e)}>
                     <fieldset>
@@ -115,6 +117,7 @@ render() {
                             type="text"
                             name="noteName"
                             id="noteName"
+                            value={note_name}
                             onChange={e => this.handleChangeNoteName(e.target.value)}
                         />
                         <br />
@@ -124,6 +127,7 @@ render() {
                             type="text"
                             name="noteContent"
                             id="noteContent"
+                            value={content}
                             onChange={e => this.handleChangeContent(e.target.value)}
                         />
                         <br />
@@ -132,10 +136,11 @@ render() {
                         <select
                             name="noteFolder"
                             id="noteFolder"
+                            value={folder}
                             onChange={e => this.handleChangeFolder(e.target.value)}
                         >
                             <option value="selectOne">Select One</option>
-                            {context.folders.map((folder, index) => {
+                            {this.context.folders.map((folder, index) => {
                                 return (
                                     <option value={`${folder.id}`} key={index}>{folder.folder_name}</option>
                                 )
