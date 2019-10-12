@@ -32,7 +32,7 @@ class AddFolder extends Component {
         if(folderName.name === "") {
             console.log('Empty folder name submitted');
         } else {
-            fetch('http://localhost:8000/api/folders/addFolder', {
+            fetch('https://desolate-caverns-20141.herokuapp.com/api/folders/addFolder', {
                 method: 'POST',
                 body: JSON.stringify(folderName),
                 headers: {

@@ -8,7 +8,7 @@ class DeleteButton extends Component {
     
     deleteNote = (id) => {
                         console.log('deleteNote ran')
-                        fetch(`http://localhost:8000/api/notes/${id}`, {
+                        fetch(`https://desolate-caverns-20141.herokuapp.com/api/notes/${id}`, {
                             method: 'DELETE',
                             headers: {
                                 'content-type': 'application/json'

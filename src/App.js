@@ -43,7 +43,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:8000/api/folders', {
+    fetch('https://desolate-caverns-20141.herokuapp.com/api/folders', {
       method: 'GET',
       headers: {
         'content-type': 'application/json'
@@ -64,7 +64,7 @@ class App extends React.Component {
       console.log(error.message)
     });
 
-    fetch('http://localhost:8000/api/notes', {method: 'GET'})
+    fetch('https://desolate-caverns-20141.herokuapp.com/api/notes', {method: 'GET'})
     .then(response => {
       if (!response.ok) {
         throw new Error(response.status)

@@ -66,7 +66,7 @@ class AddNote extends Component {
         if(note.name === "" || (note.folderId === "selectOne" || note.folderId === "")) {
             console.log('Note name is empty or no folder selected');
         } else {
-            fetch('http://localhost:8000/api/notes/addNote', {
+            fetch('https://desolate-caverns-20141.herokuapp.com/api/notes/addNote', {
             method: 'POST',
             body: JSON.stringify(note),
             headers: {
