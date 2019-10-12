@@ -16,7 +16,7 @@ class Main extends Component {
             updateFolders: PropTypes.func.isRequired,
             updateNotes: PropTypes.func.isRequired
         };
-    
+
         return (
             <div className="Main">
                 <Route 

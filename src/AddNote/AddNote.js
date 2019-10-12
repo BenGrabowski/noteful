@@ -26,6 +26,7 @@ class AddNote extends Component {
 
     updateNoteName(noteName) {
         this.setState({noteName: {value: noteName, touched: true}});
+        console.log(noteName)
     }
 
     updateNoteContent(noteContent) {

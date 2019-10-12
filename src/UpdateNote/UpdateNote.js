@@ -63,8 +63,8 @@ class UpdateNote extends Component {
         this.setState({ modified: new Date() })
     }
 
-    hanldeChangeFolder = e => {
-        this.setState({ folder: e.target.value })
+    handleChangeFolder = e => {
+        this.setState({ folder: parseInt(e.target.value) })
     }
 
     handleSubmit = e => {
@@ -72,6 +72,7 @@ class UpdateNote extends Component {
         const { noteId } = this.props.match.params
         const { id, note_name, content, modified, folder } = this.state
         const newNote = { id, note_name, content, modified, folder }
+        console.log(newNote)
         fetch(`https://desolate-caverns-20141.herokuapp.com/api/notes/${noteId}`, {
             method: 'PATCH',
             body: JSON.stringify(newNote),
@@ -118,7 +119,7 @@ render() {
                             name="noteName"
                             id="noteName"
                             value={note_name}
-                            onChange={e => this.handleChangeNoteName(e.target.value)}
+                            onChange={e => this.handleChangeNoteName(e)}
                         />
                         <br />
 
@@ -128,7 +129,7 @@ render() {
                             name="noteContent"
                             id="noteContent"
                             value={content}
-                            onChange={e => this.handleChangeContent(e.target.value)}
+                            onChange={e => this.handleChangeContent(e)}
                         />
                         <br />
 
@@ -137,7 +138,7 @@ render() {
                             name="noteFolder"
                             id="noteFolder"
                             value={folder}
-                            onChange={e => this.handleChangeFolder(e.target.value)}
+                            onChange={e => this.handleChangeFolder(e)}
                         >
                             <option value="selectOne">Select One</option>
                             {this.context.folders.map((folder, index) => {
