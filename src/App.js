@@ -32,6 +32,14 @@ class App extends React.Component {
     });
   }
 
+  handleUpdateNote = updatedNote => {
+    this.setState({
+      notes: this.state.notes.map(note =>
+          (note.id !== updatedNote.id) ? note : updatedNote
+        )
+    })
+  }
+
   updateFolders = (newFolder) => {
     this.state.folders.push(newFolder);
     this.setState({folders: this.state.folders});
@@ -92,6 +100,7 @@ class App extends React.Component {
       setSelectedNote: this.setSelectedNote,
       handleDeleteNote: this.handleDeleteNote,
       updateFolders: this.updateFolders,
+      handleUpdateNote: this.handleUpdateNote,
     }
     
     return (

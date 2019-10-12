@@ -32,9 +32,9 @@ class NoteItem extends Component {
                          <h2>{this.props.name}</h2>
                      </Link>
                      <p>{`Date modified on ${moment(this.props.modified).format('Do MMM YYYY')}`}</p>
+                     <Link to={`/updateNote/${this.props.id}`}>Update Note</Link>
                      <DeleteButton
                         id={this.props.id}
-                        // returnHome={() => context.returnHome()}
                      />
                  </li>);
                 }}

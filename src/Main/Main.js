@@ -6,6 +6,7 @@ import AddFolder from '../AddFolder/AddFolder';
 import AddFolderError from '../AddFolder/AddFolderError';
 import AddNote from '../AddNote/AddNote';
 import AddNoteError from '../AddNote/AddNoteError';
+import UpdateNote from '../UpdateNote/UpdateNote';
 import PropTypes from 'prop-types';
 import './Main.css';
 
@@ -53,6 +54,15 @@ class Main extends Component {
                         }}
                     />
                 </AddNoteError>
+                <Route
+                    path='/updateNote/:noteId'
+                    render={( {history} ) => {
+                        return <UpdateNote
+                            history={history}
+                            updateNotes={this.props.updateNotes}
+                        />
+                    }}
+                />
             </div>
         );
     }
