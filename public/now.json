@@ -1,0 +1,15 @@
+{
+    "version": 2,
+    "alias": "bens-noteful-client",
+    "name": "noteful",
+    "routes": [
+        {
+          "src": "^/static/(.*)",
+          "dest": "/static/$1"
+        },
+        {
+          "src": ".*",
+          "dest": "/index.html"
+        }
+    ]
+  }
